@@ -1,0 +1,200 @@
+export const defaultAchievements = [
+  {
+    slug: 'viraj_ustasi',
+    title: 'Apex Virtüözü',
+    description: 'Telemetri kaydında 50° ve üzeri yatış açısına ulaş.',
+    category: 'Performans',
+    badgeType: 'Gold',
+    metric: 'maxLeanAngle',
+    requiredValue: 50,
+    unit: '°',
+    pointsReward: 250
+  },
+  {
+    slug: 'otoban_fatihi',
+    title: 'Mesafe Avcısı',
+    description: 'Motosikletinle toplam 1.000 km yol katet.',
+    category: 'Keşif',
+    badgeType: 'Neon',
+    metric: 'totalKm',
+    requiredValue: 1000,
+    unit: 'km',
+    pointsReward: 150
+  },
+  {
+    slug: 'yol_kaptani',
+    title: 'Konvoy Lideri',
+    description: 'Grup sürüşlerine 5 kez sürüş lideri olarak öncülük et.',
+    category: 'Sosyal',
+    badgeType: 'Carbon',
+    metric: 'packLeads',
+    requiredValue: 5,
+    unit: 'kez',
+    pointsReward: 100
+  },
+  {
+    slug: 'gece_yarisi',
+    title: 'Gece Devriyesi',
+    description: '00:00 - 04:00 saatleri arasında gece sürüşü tamamla.',
+    category: 'Keşif',
+    badgeType: 'Gold',
+    metric: 'nightRides',
+    requiredValue: 1,
+    unit: 'kez',
+    pointsReward: 200
+  },
+  {
+    slug: 'hiz_tapinagi',
+    title: 'Pist Sürati',
+    description: 'Kapalı pist seansında 200 km/s telemetri hızına ulaş.',
+    category: 'Performans',
+    badgeType: 'Neon',
+    metric: 'topSpeed',
+    requiredValue: 200,
+    unit: 'km/s',
+    pointsReward: 250
+  },
+  {
+    slug: 'komunite_lideri',
+    title: 'Etkinlik Mimarı',
+    description: 'Topluluk için 5 organize sürüş etkinliği düzenle.',
+    category: 'Sosyal',
+    badgeType: 'Carbon',
+    metric: 'eventsCreated',
+    requiredValue: 5,
+    unit: 'etkinlik',
+    pointsReward: 100
+  },
+  {
+    slug: 'pusula_kasifi',
+    title: 'Rota Kâşifi',
+    description: 'Motosikletinle 10 farklı şehri ziyaret edip iz bırak.',
+    category: 'Keşif',
+    badgeType: 'Gold',
+    metric: 'uniqueCities',
+    requiredValue: 10,
+    unit: 'şehir',
+    pointsReward: 250
+  },
+  {
+    slug: 'gaz_kardesligi',
+    title: 'Kardeşlik Bağı',
+    description: 'Sürücü çevreni ve takip ağını 50 üyeye ulaştır.',
+    category: 'Sosyal',
+    badgeType: 'Neon',
+    metric: 'followGraph',
+    requiredValue: 50,
+    unit: 'kişi',
+    pointsReward: 150
+  },
+  {
+    slug: 'demir_popo',
+    title: 'Demir Atlı (Endurance)',
+    description: 'Uzun yol disipliniyle toplam 5.000 km sürüş barajını aş.',
+    category: 'Keşif',
+    badgeType: 'Carbon',
+    metric: 'totalKm',
+    requiredValue: 5000,
+    unit: 'km',
+    pointsReward: 300
+  },
+  {
+    slug: 'apex_avcisi',
+    title: 'Apex Koleksiyoneri',
+    description: 'Sürüş ve topluluk aktivitelerinden 1.500 APX puanı topla.',
+    category: 'Performans',
+    badgeType: 'Gold',
+    metric: 'points',
+    requiredValue: 1500,
+    unit: 'APEX',
+    pointsReward: 250
+  },
+  {
+    slug: 'pist_canavari',
+    title: 'Süper Spor Uzmanı',
+    description: 'Resmi pist seansında 250 km/s üstü telemetri hızına ulaş.',
+    category: 'Performans',
+    badgeType: 'Neon',
+    metric: 'topSpeed',
+    requiredValue: 250,
+    unit: 'km/s',
+    pointsReward: 350
+  },
+  {
+    slug: 'gece_savascisi',
+    title: 'Karanlık Sürücüsü',
+    description: 'Gece saatlerinde toplam 10 güvenli sürüş oturumu tamamla.',
+    category: 'Keşif',
+    badgeType: 'Gold',
+    metric: 'nightRides',
+    requiredValue: 10,
+    unit: 'kez',
+    pointsReward: 300
+  },
+  {
+    slug: 'komunite_gurusu',
+    title: 'Büyük Organizatör',
+    description: 'Topluluk için 15 geniş katılımlı sürüş etkinliği düzenle.',
+    category: 'Sosyal',
+    badgeType: 'Carbon',
+    metric: 'eventsCreated',
+    requiredValue: 15,
+    unit: 'etkinlik',
+    pointsReward: 250
+  },
+  {
+    slug: 'kasif_kral',
+    title: 'Kıtalararası Gezgin',
+    description: '25 farklı şehrin asfaltında sürerek haritanı fethet.',
+    category: 'Keşif',
+    badgeType: 'Gold',
+    metric: 'uniqueCities',
+    requiredValue: 25,
+    unit: 'şehir',
+    pointsReward: 400
+  },
+  {
+    slug: 'populer_rider',
+    title: 'Topluluk İkonu',
+    description: 'Sürücü ağında toplam 150 motosikletçiyle bağlantı kur.',
+    category: 'Sosyal',
+    badgeType: 'Neon',
+    metric: 'followGraph',
+    requiredValue: 150,
+    unit: 'kişi',
+    pointsReward: 250
+  },
+  {
+    slug: 'asfalt_efsanesi',
+    title: 'Asfalt Efsanesi',
+    description: 'Motosikletinle toplam 10.000 km mesafe rekorunu kır.',
+    category: 'Keşif',
+    badgeType: 'Neon',
+    metric: 'totalKm',
+    requiredValue: 10000,
+    unit: 'km',
+    pointsReward: 500
+  },
+  {
+    slug: 'rota_ustadi',
+    title: 'Rota Üstadı',
+    description: '40 farklı şehre sürerek ulusal sürüş haritasını tamamla.',
+    category: 'Keşif',
+    badgeType: 'Gold',
+    metric: 'uniqueCities',
+    requiredValue: 40,
+    unit: 'şehir',
+    pointsReward: 500
+  },
+  {
+    slug: 'apex_zirvesi',
+    title: 'Apex Şampiyonu',
+    description: 'Toplam 10.000 APX puanına ulaşarak elit ligde yerini al.',
+    category: 'Performans',
+    badgeType: 'Neon',
+    metric: 'points',
+    requiredValue: 10000,
+    unit: 'APEX',
+    pointsReward: 1000
+  }
+];

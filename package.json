@@ -1,0 +1,40 @@
+{
+  "name": "motovibe-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "engines": {
+    "node": "20"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "node --test tests/*.test.js",
+    "test:business-smoke": "node scripts/business-smoke.mjs",
+    "data:migrate-pack-roles": "node scripts/migrate-pack-member-roles.mjs",
+    "data:backfill-route-centroids": "node scripts/backfill-route-centroids.mjs",
+    "import:poi": "node scripts/importPoisFromOverpass.mjs",
+    "data:import": "node seeder.js",
+    "data:destroy": "node seeder.js -d",
+    "release:build": "node scripts/build-release.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.89.0",
+    "bcryptjs": "^3.0.3",
+    "compression": "^1.8.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.5.2",
+    "firebase-admin": "^13.10.0",
+    "firebase-functions": "^7.2.5",
+    "ioredis": "^5.9.2",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.0.1",
+    "multer": "^2.0.2",
+    "node-cron": "^3.0.3",
+    "nodemailer": "^9.1.1",
+    "socket.io": "^4.8.1",
+    "ssh2": "^1.17.0"
+  }
+}

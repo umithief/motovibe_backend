@@ -1,0 +1,14 @@
+.env
+.env.*
+!.env.example
+node_modules/
+uploads/
+*.log
+*.tar
+*.tar.gz
+coverage/
+.nyc_output/
+
+# Credentials live outside the source tree.
+serviceAccount*.json
+*service-account*.json
