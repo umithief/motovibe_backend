@@ -1,0 +1,26 @@
+import { sendResponse } from '../../utils/respond.js';
+import { raiseHttpError } from '../../utils/httpError.js';
+import * as service from './service.js';
+import catchAsync from '../../utils/catchAsync.js';
+import { serializeMediaUrls } from '../../utils/serializeMediaUrls.js';
+const handler = method => catchAsync(async (req,res) => {
+    const response = await method({ query:req.query, params:req.params, body:req.body, user:req.user });
+    if(response.statusCode>=400)raiseHttpError(response.body,response.statusCode);
+    sendResponse(res.req,res,response.body,{statusCode:response.statusCode});
+});
+export const listEvents = handler(service.listEvents);
+export const getEventStats = handler(service.getEventStats);
+export const getFeaturedEvents = handler(service.getFeaturedEvents);
+export const getMyEvents = handler(service.getMyEvents);
+export const getEvent = handler(service.getEvent);
+export const createEvent = handler(service.createEvent);
+export const updateEvent = handler(service.updateEvent);
+export const deleteEvent = handler(service.deleteEvent);
+export const cancelEvent = handler(service.cancelEvent);
+export const joinEvent = handler(service.joinEvent);
+export const leaveEvent = handler(service.leaveEvent);
+export const startEvent = handler(service.startEvent);
+export const finishEvent = handler(service.finishEvent);
+export const updateEventLocation = handler(service.updateEventLocation);
+export const getEventLive = handler(service.getEventLive);
+export const sendEventMessage = handler(service.sendEventMessage);

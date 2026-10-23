@@ -1,0 +1,11 @@
+import { createController } from '../../utils/controller.js';
+import * as operations from './garage.service.js';
+export const getGarage=createController(input=>operations.getGarage(input));
+export const addToGarage=createController(input=>operations.addToGarage(input));
+export const removeFromGarage=createController(input=>operations.removeFromGarage(input));
+export const setPrimaryBike=createController(input=>operations.setPrimaryBike(input));
+export const verifyGarageItem=createController(input=>operations.verifyGarageItem(input));
+export const updateGarageItem=createController(input=>operations.updateGarageItem(input));
+export const addMaintenanceRecord=createController(input=>operations.addMaintenanceRecord(input));
+export const deleteMaintenanceRecord=createController(input=>operations.deleteMaintenanceRecord(input));
+export const calculateFuelEfficiency=createController(input=>operations.calculateFuelEfficiency(input));

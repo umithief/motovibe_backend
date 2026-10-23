@@ -1,12 +1,11 @@
 
 import Redis from 'ioredis';
-import dotenv from 'dotenv';
 
-dotenv.config();
 
 const redisUrl = process.env.REDIS_URI || process.env.REDIS_URL || 'redis://localhost:6379';
 
 const redis = new Redis(redisUrl, {
+    lazyConnect: true,
     maxRetriesPerRequest: 1, // Reduced to fail fast
     enableOfflineQueue: false, // DON'T queue commands if redis is down
     connectTimeout: 200, // 200ms timeout for connection (fail FAST)

@@ -5,7 +5,7 @@ import {
     buildBusinessCatalogItemInput,
     isValidBusinessCoordinates,
     normalizeBusinessWorkingHours
-} from '../controllers/userController.js';
+} from "../modules/users/controller.js";
 
 test('business coordinates enforce longitude and latitude bounds', () => {
     assert.equal(isValidBusinessCoordinates([28.9784, 41.0082]), true);

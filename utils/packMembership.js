@@ -82,6 +82,11 @@ export const isApprovedMember = (pack, userId) => {
     return Boolean(member) && memberRole(member) !== 'prospect';
 };
 
+/** Ids of approved (non-prospect) members; pack content is visible only to them. */
+export const approvedMemberIds = (pack) => packMembers(pack)
+    .filter((member) => memberRole(member) !== 'prospect')
+    .map(memberUserId);
+
 export const membershipFlags = (pack, userId) => {
     const member = findPackMember(pack, userId);
     const role = memberRole(member);

@@ -9,17 +9,18 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
-    "test": "node --test tests/*.test.js",
+    "test": "node scripts/test.mjs",
     "test:business-smoke": "node scripts/business-smoke.mjs",
     "data:migrate-pack-roles": "node scripts/migrate-pack-member-roles.mjs",
     "data:backfill-route-centroids": "node scripts/backfill-route-centroids.mjs",
     "import:poi": "node scripts/importPoisFromOverpass.mjs",
-    "data:import": "node seeder.js",
-    "data:destroy": "node seeder.js -d",
-    "release:build": "node scripts/build-release.mjs"
+    "data:import": "node scripts/seed-demo.mjs",
+    "release:build": "node scripts/build-release.mjs",
+    "data:seed-demo": "node scripts/seed-demo.mjs",
+    "data:migrate-group-rides": "node scripts/migrate-group-rides.mjs",
+    "test:live-preflight": "node scripts/live-preflight.mjs"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.89.0",
     "bcryptjs": "^3.0.3",
     "compression": "^1.8.1",
     "cors": "^2.8.5",
@@ -35,6 +36,10 @@
     "node-cron": "^3.0.3",
     "nodemailer": "^9.1.1",
     "socket.io": "^4.8.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
     "ssh2": "^1.17.0"
   }
 }

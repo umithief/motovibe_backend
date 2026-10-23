@@ -1,0 +1,14 @@
+import { createController } from '../../utils/controller.js';
+import * as operations from './service.js';
+export const createStory=createController(input=>operations.createStory(input));
+export const getStories=createController(input=>operations.getStories(input));
+export const viewStory=createController(input=>operations.viewStory(input));
+export const likeStory=createController(input=>operations.likeStory(input));
+export const unlikeStory=createController(input=>operations.unlikeStory(input));
+export const reactToStory=createController(input=>operations.reactToStory(input));
+export const getStoryViewers=createController(input=>operations.getStoryViewers(input));
+export const replyToStory=createController(input=>operations.replyToStory(input));
+export const deleteStory=createController(input=>operations.deleteStory(input));
+export const createHighlight=createController(input=>operations.createHighlight(input));
+export const getUserHighlights=createController(input=>operations.getUserHighlights(input));
+export const deleteHighlight=createController(input=>operations.deleteHighlight(input));

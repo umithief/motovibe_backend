@@ -8,9 +8,9 @@ const __dirname = path.dirname(__filename);
 dotenv.config({ path: path.join(__dirname, '../.env') });
 
 // Import models
-import '../models/User.js';
-import '../models/Achievement.js';
-import '../models/Notification.js';
+import "../modules/users/model.js";
+import "../modules/achievements/model.js";
+import "../modules/notifications/model.js";
 
 import {
     calculateRankAndLevel,
@@ -19,7 +19,7 @@ import {
     setMaxMetric,
     recordVisitedCity,
     evaluateAndUnlock
-} from '../services/achievementEngine.js';
+} from "../modules/achievements/service.js";
 
 const User = mongoose.model('User');
 const Achievement = mongoose.model('Achievement');

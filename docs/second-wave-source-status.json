@@ -1,0 +1,16 @@
+{
+  "deletedLegacyFolders": [
+    "controllers",
+    "routes",
+    "services"
+  ],
+  "closedFeatures": [
+    "categories",
+    "models3d"
+  ],
+  "tagHelper": "utils/tagUtils.js",
+  "rideBikeLink": "User.garage._id",
+  "ssh2": "development-only",
+  "firebaseFunctions": "retained for index.js onRequest",
+  "archives": "external quarantine; moved without copies"
+}

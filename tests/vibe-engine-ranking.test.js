@@ -8,7 +8,7 @@ import {
     enrichFeedItem,
     rankDiscoveryItems,
     stableJitter,
-} from '../controllers/feedController.js';
+} from "../modules/discovery/feed.service.js";
 
 test('VibeEngine produces a stable order for the same viewer', () => {
     const items = [
@@ -205,5 +205,3 @@ test('calculateVibeScore scores routes according to rider count and ratings', ()
     const score = calculateVibeScore(routeItem, 'route', {}, null, 'viewer-1');
     assert.ok(score > 100);
 });
-
-

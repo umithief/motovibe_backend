@@ -10,7 +10,7 @@ const {
     hashOpaqueToken,
     signAccessToken,
     verifyAccessToken,
-} = await import('../services/sessionTokenService.js');
+} = await import("../modules/auth/service.js");
 
 test('access tokens are audience-bound and carry the revocation version', () => {
     const user = {

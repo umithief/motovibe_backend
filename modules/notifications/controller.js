@@ -1,0 +1,10 @@
+import { createController } from '../../utils/controller.js';
+import * as operations from './service.js';
+export const getNotifications=createController(input=>operations.getNotifications(input));
+export const getUnreadCount=createController(input=>operations.getUnreadCount(input));
+export const markAsRead=createController(input=>operations.markAsRead(input));
+export const markAllAsRead=createController(input=>operations.markAllAsRead(input));
+export const deleteNotification=createController(input=>operations.deleteNotification(input));
+export const clearReadNotifications=createController(input=>operations.clearReadNotifications(input));
+export const sendNotificationToUser=createController(input=>operations.sendNotificationToUser(input));
+export { createNotification } from "./service.js";

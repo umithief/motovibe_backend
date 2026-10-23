@@ -1,0 +1,302 @@
+{
+  "checkedAt": "2026-10-11T10:58:33.698Z",
+  "sourceFingerprint": "28c95ca8a0fa872d120132972c21671c25580f13563bd9630ac36ae015e80ff5",
+  "releaseFiles": 249,
+  "status": "approved package prepared; candidate not deployed",
+  "checks": {
+    "health": true,
+    "capabilities": true,
+    "homeSummary": true,
+    "login": true,
+    "discover": true,
+    "reels": true,
+    "messages": true,
+    "https": false,
+    "node20": true,
+    "mongo": true,
+    "redis": true,
+    "flutter": true
+  },
+  "live": {
+    "api": "http://31.210.36.57",
+    "node": "20.20.1",
+    "mongoPing": "passed",
+    "redisPing": "passed",
+    "databaseTargetMatchesLocal": true,
+    "sshHostPinned": true,
+    "serverEntryMatchesLocal": true,
+    "https": "motonom.app TLS validates, but API requests reach motonom-visits instead of the backend",
+    "negativeLoginStatus": 401,
+    "successfulFreshLogin": "passed",
+    "groupListStatus": 200,
+    "groupListCount": 4,
+    "closed": [
+      {
+        "path": "/api/products",
+        "status": 404,
+        "code": "FEATURE_DISABLED"
+      },
+      {
+        "path": "/api/forum",
+        "status": 404,
+        "code": "FEATURE_DISABLED"
+      },
+      {
+        "path": "/api/ai",
+        "status": 404,
+        "code": "FEATURE_DISABLED"
+      }
+    ],
+    "successfulFreshLoginStatus": 200,
+    "successfulFreshLoginCheckedAt": "2026-10-11T10:38:40.6803306Z",
+    "directIpHttps": "ECONNREFUSED",
+    "httpsDomainProbe": {
+      "checkedAt": "2026-10-11T10:44:57.188Z",
+      "api": "https://motonom.app",
+      "tlsValidated": true,
+      "responses": [
+        {
+          "path": "/api/health",
+          "status": 200,
+          "contentType": "application/json; charset=utf-8",
+          "service": "motonom-visits",
+          "envelopeFields": [
+            "ok",
+            "service"
+          ],
+          "bodySha256": "3ee39ec6250a052cf8e89f942baef4a19f5f97703be86b31241a3af805703298"
+        },
+        {
+          "path": "/api/capabilities",
+          "status": 200,
+          "contentType": "application/json; charset=utf-8",
+          "service": "motonom-visits",
+          "envelopeFields": [
+            "ok",
+            "service"
+          ],
+          "bodySha256": "3ee39ec6250a052cf8e89f942baef4a19f5f97703be86b31241a3af805703298"
+        },
+        {
+          "path": "/api/home/summary",
+          "status": 200,
+          "contentType": "application/json; charset=utf-8",
+          "service": "motonom-visits",
+          "envelopeFields": [
+            "ok",
+            "service"
+          ],
+          "bodySha256": "3ee39ec6250a052cf8e89f942baef4a19f5f97703be86b31241a3af805703298"
+        },
+        {
+          "path": "/api/posts/discover?limit=1",
+          "status": 200,
+          "contentType": "application/json; charset=utf-8",
+          "service": "motonom-visits",
+          "envelopeFields": [
+            "ok",
+            "service"
+          ],
+          "bodySha256": "3ee39ec6250a052cf8e89f942baef4a19f5f97703be86b31241a3af805703298"
+        },
+        {
+          "path": "/api/reels?limit=1",
+          "status": 200,
+          "contentType": "application/json; charset=utf-8",
+          "service": "motonom-visits",
+          "envelopeFields": [
+            "ok",
+            "service"
+          ],
+          "bodySha256": "3ee39ec6250a052cf8e89f942baef4a19f5f97703be86b31241a3af805703298"
+        },
+        {
+          "path": "/api/products",
+          "status": 200,
+          "contentType": "application/json; charset=utf-8",
+          "service": "motonom-visits",
+          "envelopeFields": [
+            "ok",
+            "service"
+          ],
+          "bodySha256": "3ee39ec6250a052cf8e89f942baef4a19f5f97703be86b31241a3af805703298"
+        },
+        {
+          "path": "/api/forum",
+          "status": 200,
+          "contentType": "application/json; charset=utf-8",
+          "service": "motonom-visits",
+          "envelopeFields": [
+            "ok",
+            "service"
+          ],
+          "bodySha256": "3ee39ec6250a052cf8e89f942baef4a19f5f97703be86b31241a3af805703298"
+        },
+        {
+          "path": "/api/ai",
+          "status": 200,
+          "contentType": "application/json; charset=utf-8",
+          "service": "motonom-visits",
+          "envelopeFields": [
+            "ok",
+            "service"
+          ],
+          "bodySha256": "3ee39ec6250a052cf8e89f942baef4a19f5f97703be86b31241a3af805703298"
+        }
+      ],
+      "allBodiesIdentical": true,
+      "backendMatched": false
+    },
+    "apiSubdomain": {
+      "host": "api.motonom.app",
+      "dnsResolved": false
+    },
+    "originHostHeaderProbe": {
+      "host": "motonom.app",
+      "health": 200,
+      "capabilities": 200,
+      "products": 404
+    }
+  },
+  "migration": {
+    "approval": "User explicitly approved 7 records after dry-run",
+    "inspected": 7,
+    "promoted": 7,
+    "existingAfterApply": 7,
+    "pendingAfterApply": 0,
+    "invalid": 0,
+    "collisions": 0,
+    "legacyRecordsPreserved": 7
+  },
+  "device": {
+    "model": "Samsung SM-S938B",
+    "package": "com.motonom.app",
+    "scope": "Existing installed build against current live backend; no candidate deployment",
+    "responses": [
+      {
+        "Status": 200,
+        "Path": "/api/capabilities"
+      },
+      {
+        "Status": 200,
+        "Path": "/api/posts/discover"
+      },
+      {
+        "Status": 200,
+        "Path": "/api/home/summary"
+      },
+      {
+        "Status": 200,
+        "Path": "/api/messages/threads"
+      },
+      {
+        "Status": 200,
+        "Path": "/api/reels"
+      },
+      {
+        "Status": 200,
+        "Path": "/api/capabilities"
+      },
+      {
+        "Status": 200,
+        "Path": "/api/capabilities"
+      },
+      {
+        "Status": 200,
+        "Path": "/api/posts/discover"
+      },
+      {
+        "Status": 200,
+        "Path": "/api/messages/threads"
+      },
+      {
+        "Status": 200,
+        "Path": "/api/posts/discover"
+      },
+      {
+        "Status": 200,
+        "Path": "/api/messages/threads"
+      },
+      {
+        "Status": 200,
+        "Path": "/api/users/login"
+      },
+      {
+        "Status": 200,
+        "Path": "/api/home/summary"
+      },
+      {
+        "Status": 200,
+        "Path": "/api/posts/discover"
+      }
+    ]
+  },
+  "productionDependencies": {
+    "node": "20.20.2",
+    "command": "npm ci --omit=dev --ignore-scripts --offline",
+    "installed": 329,
+    "ssh2Installed": false,
+    "firebaseFunctionsInstalled": true
+  },
+  "packageCreated": true,
+  "deployed": false,
+  "dockerImageBuilt": false,
+  "unverified": [
+    "New source deployed acceptance",
+    "Firebase ADC/FCM/cloud onRequest",
+    "Two-account message delivery"
+  ],
+  "archiveDestination": "C:/Users/ishak/AppData/Local/Motonom/quarantine/2026-10-11",
+  "scope": "Existing live backend and installed Flutter build; source changes verified locally",
+  "transport": {
+    "api": "http://31.210.36.57",
+    "userDecision": "Keep the existing HTTP API for now"
+  },
+  "packageGate": {
+    "httpsRequiredByDefault": true,
+    "oneTimeHttpApproval": true,
+    "approvalConsumed": true,
+    "passedForThisPackage": true
+  },
+  "outOfScopeByUserDecision": [
+    "HTTPS/domain routing changes"
+  ],
+  "package": {
+    "files": 249,
+    "output": "C:\\Users\\ishak\\AppData\\Local\\Motonom\\releases\\2026-10-11T10-57-17-958Z\\motonom-backend",
+    "archive": "C:\\Users\\ishak\\AppData\\Local\\Motonom\\releases\\2026-10-11T10-57-17-958Z\\motonom-backend.tar.gz",
+    "httpExceptionUsed": true,
+    "sourceFingerprint": "28c95ca8a0fa872d120132972c21671c25580f13563bd9630ac36ae015e80ff5",
+    "archiveFiles": 250,
+    "bytes": 278914,
+    "sha256": "cf9fc3f8b05cba0a15af6e0b08665e65ce13e71d0e354eca191858cbb63c1748",
+    "approvalFile": "C:\\Users\\ishak\\AppData\\Local\\Motonom\\operations\\package-http-approval-2026-10-11T10-57-17-958Z.json",
+    "approvalConsumed": true,
+    "createdAt": "2026-10-11T10:57:21.887Z",
+    "deployed": false
+  },
+  "liveArchiveCleanup": {
+    "move": {
+      "source": "/var/www/motovibe/uploads.tar.gz",
+      "destination": "/var/backups/motonom/quarantine/2026-10-11/uploads.tar.gz",
+      "bytes": 201411543,
+      "sha256": "6beea16c88eae4b2493e3f63165fcb2428b171ccaafaf88353d30aa4a9ecb640",
+      "movedWithoutCopy": true,
+      "verified": true,
+      "sourceExists": false
+    },
+    "afterMove": {
+      "root": "/var/www/motovibe",
+      "files": [
+        {
+          "name": "release.tar.gz",
+          "exists": false
+        },
+        {
+          "name": "uploads.tar.gz",
+          "exists": false
+        }
+      ]
+    }
+  }
+}

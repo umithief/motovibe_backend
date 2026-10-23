@@ -1,0 +1,11 @@
+import { createController } from '../../utils/controller.js';
+import * as operations from './service.js';
+export const getCampaigns=createController(input=>operations.getCampaigns(input));
+export const getNearbyPins=createController(input=>operations.getNearbyPins(input));
+export const getMyChallenges=createController(input=>operations.getMyChallenges(input));
+export const joinCampaign=createController(input=>operations.joinCampaign(input));
+export const claimReward=createController(input=>operations.claimReward(input));
+export const adminGetCampaigns=createController(input=>operations.adminGetCampaigns(input));
+export const adminCreateCampaign=createController(input=>operations.adminCreateCampaign(input));
+export const adminUpdateCampaign=createController(input=>operations.adminUpdateCampaign(input));
+export const adminDeleteCampaign=createController(input=>operations.adminDeleteCampaign(input));

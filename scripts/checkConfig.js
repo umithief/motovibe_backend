@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
-import VibeConfig from '../models/VibeConfig.js';
+import VibeConfig from "../modules/discovery/model.js";
 
 const envPath = 'c:\\Users\\ishak\\Downloads\\motovibe---premium-motosiklet-aksesuarları (18)\\.env';
 dotenv.config({ path: envPath });

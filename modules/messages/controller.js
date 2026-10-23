@@ -1,0 +1,12 @@
+import { createController } from '../../utils/controller.js';
+import * as operations from './application.service.js';
+export const getThreads=createController(input=>operations.getThreads(input));
+export const getUnreadCount=createController(input=>operations.getUnreadCount(input));
+export const getConversation=createController(input=>operations.getConversation(input));
+export const sendMessage=createController(input=>operations.sendMessage(input));
+export const toggleMuteConversation=createController(input=>operations.toggleMuteConversation(input));
+export const markConversationAsRead=createController(input=>operations.markConversationAsRead(input));
+export const deleteConversation=createController(input=>operations.deleteConversation(input));
+export const deleteMessage=createController(input=>operations.deleteMessage(input));
+export const respondRideInvite=createController(input=>operations.respondRideInvite(input));
+export const getMyPackLounges=createController(input=>operations.getMyPackLounges(input));

@@ -5,7 +5,7 @@ import test from 'node:test';
 import {
   revenueCatUpdateForEvent,
   verifyRevenueCatSignature,
-} from '../controllers/revenuecatWebhook.js';
+} from "../modules/subscriptions/controller.js";
 
 function signatureFor(rawBody, timestamp, secret) {
   const signedPayload = Buffer.concat([

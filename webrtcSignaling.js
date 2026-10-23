@@ -1,8 +1,8 @@
-import User from './models/User.js';
-import { verifyAccessToken } from './services/sessionTokenService.js';
-import Pack from './models/Pack.js';
+import User from "./modules/users/model.js";
+import { verifyAccessToken } from "./modules/auth/service.js";
+import Pack from "./modules/packs/model.js";
 import mongoose from 'mongoose';
-import { normalizeLegacyPackMembers } from './services/packGarageService.js';
+import { normalizeLegacyPackMembers } from "./modules/packs/service.js";
 
 const MAX_USERS_PER_CHANNEL = 8;
 const channels = new Map();

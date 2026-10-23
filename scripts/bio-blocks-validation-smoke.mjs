@@ -7,13 +7,13 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 dotenv.config({ path: path.join(__dirname, '../.env') });
 
-import '../models/User.js';
+import "../modules/users/model.js";
 import {
     validateAndSanitizeBioBlocks,
     FREE_BIO_BLOCK_TYPES,
     PRO_BIO_BLOCK_TYPES,
     ALL_BIO_BLOCK_TYPES
-} from '../controllers/userController.js';
+} from "../modules/users/controller.js";
 
 async function runBioValidationTests() {
     console.log('🧪 --- STARTING BIO BLOCKS DEFENSIVE VALIDATION SMOKE TEST --- 🧪\n');

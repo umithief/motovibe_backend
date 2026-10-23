@@ -1,10 +1,10 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import fs from 'node:fs';
-import { discoveryWindow, trimDiscoverySources } from '../services/discoveryPaging.js';
+import { discoveryWindow, trimDiscoverySources } from "../modules/discovery/discoveryPaging.service.js";
 import { getRuntimeCapabilities } from '../config/release.js';
 import { createCorsOptions } from '../middleware/securityMiddleware.js';
-import GroupRide from '../models/GroupRide.js';
+import GroupRide from "../modules/rides/GroupRide.model.js";
 
 test('discovery source windows remain contiguous and disjoint through deep pages', () => {
     for (const category of ['for_you', 'trend', 'videos', 'routes', 'following']) {
@@ -52,7 +52,7 @@ test('Firebase secrets and demo seeds cannot load implicitly from the source tre
     const server = fs.readFileSync(new URL('../server.js', import.meta.url), 'utf8');
     assert.doesNotMatch(server, /readFileSync\(serviceAccount/);
     assert.doesNotMatch(server, /Access-Control-Allow-Origin.*\*/);
-    const deploy = fs.readFileSync(new URL('../deploy.js', import.meta.url), 'utf8');
+    const deploy = fs.readFileSync(new URL('../attic/operations/deploy.js', import.meta.url), 'utf8');
     assert.ok(!deploy.includes('add_header Access-Control-Allow-Origin *;'));
     assert.ok(deploy.includes('map $http_origin $motonom_upload_cors_origin'));
     assert.ok(deploy.includes('allowedUploadOrigins.map'));
@@ -69,7 +69,10 @@ test('Firebase secrets and demo seeds cannot load implicitly from the source tre
     assert.ok(deploy.includes("writeRemoteFile('/etc/nginx/sites-available/motovibe', nginxConfig, 0o644)"));
     assert.ok(deploy.includes("console.log('API is live at: ' + baseUrl)"));
     assert.ok(deploy.includes('proxy_set_header X-Forwarded-Proto $scheme;'));
-    assert.match(server, /NODE_ENV !== 'production' && process.env.SEED_DEMO_DATA === 'true'/);
+    assert.doesNotMatch(server, /seedDatabase|SEED_DEMO_DATA|ensureDefaultAchievements/);
+    const seed = fs.readFileSync(new URL('../scripts/seed-demo.mjs', import.meta.url), 'utf8');
+    assert.match(seed, /NODE_ENV === 'production'/);
+    assert.match(seed, /--apply/);
 });
 
 test('admin slide validation rejects empty content, unsafe URLs and malformed actions', async () => {
@@ -93,7 +96,7 @@ test('Gemini request transmits the key only in the header', async () => {
         return {ok:true, json:async () => ({candidates:[{content:{parts:[{text:'Yanıt'}]}}]})};
     };
     try {
-        const { chatWithMotoVibeAi } = await import('../controllers/aiController.js');
+        const { chatWithMotoVibeAi } = await import('../attic/closed/controllers/aiController.js');
         await new Promise((resolve,reject) => chatWithMotoVibeAi({body:{message:'Merhaba'}},
             {status(){return this;},json:resolve},reject));
         assert.equal(request.options.headers['x-goog-api-key'], 'test-secret-key');

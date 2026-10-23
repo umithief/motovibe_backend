@@ -12,3 +12,5 @@ coverage/
 # Credentials live outside the source tree.
 serviceAccount*.json
 *service-account*.json
+
+dist-release/

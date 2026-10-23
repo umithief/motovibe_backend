@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 
-import { calculateBusinessFunnelMetrics } from '../controllers/businessAnalyticsController.js';
+import { calculateBusinessFunnelMetrics } from "../modules/business/businessAnalytics.controller.js";
 
 test('business funnel calculates request, approval and completion metrics', () => {
     const result = calculateBusinessFunnelMetrics({

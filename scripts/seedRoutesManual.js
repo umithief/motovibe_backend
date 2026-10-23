@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import Route from '../models/Route.js';
+import Route from "../modules/routes/model.js";
 import path from 'path';
 import { fileURLToPath } from 'url';
 

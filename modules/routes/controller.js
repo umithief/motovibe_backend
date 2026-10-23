@@ -1,0 +1,15 @@
+import { createController } from '../../utils/controller.js';
+import * as operations from './application.service.js';
+export const getRoutes=createController(input=>operations.getRoutes(input));
+export const getMyRoutes=createController(input=>operations.getMyRoutes(input));
+export const getRouteById=createController(input=>operations.getRouteById(input));
+export const createRoute=createController(input=>operations.createRoute(input));
+export const updateRouteDetails=createController(input=>operations.updateRouteDetails(input));
+export const deleteRoute=createController(input=>operations.deleteRoute(input));
+export const recordRouteRide=createController(input=>operations.recordRouteRide(input));
+export const seedRoutes=createController(input=>operations.seedRoutes(input));
+export const generateApexRoute=createController(input=>operations.generateApexRoute(input));
+export const saveRoute=createController(input=>operations.saveRoute(input));
+export const addReview=createController(input=>operations.addReview(input));
+export const editReview=createController(input=>operations.editReview(input));
+export const deleteReview=createController(input=>operations.deleteReview(input));

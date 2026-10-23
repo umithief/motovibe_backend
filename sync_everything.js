@@ -14,10 +14,11 @@ const IGNORE_FILES = ['release.tar.gz', 'uploads.tar.gz', 'check_output.txt', '.
 function scanDirectory(dirPath, fileList = []) {
     const items = fs.readdirSync(dirPath);
     for (const item of items) {
-        if (IGNORE_DIRS.includes(item)) continue;
-        if (item.startsWith('.') && item !== '.env' && item !== '.env.example') continue;
         const fullPath = path.join(dirPath, item);
         const relPath = path.relative(process.cwd(), fullPath).replace(/\\/g, '/');
+        if (relPath === 'node_modules' || relPath === 'uploads' || relPath === '.git') continue;
+        if (item === 'node_modules' || item === '.git') continue;
+        if (item.startsWith('.') && item !== '.env' && item !== '.env.example') continue;
 
         if (IGNORE_FILES.includes(item)) continue;
 
@@ -44,7 +45,7 @@ const conn = new Client();
 conn.on('ready', () => {
     console.log('SSH Connected.');
 
-    const remoteCmd = `find ${REMOTE_BASE_DIR} -type f ! -path "*/node_modules/*" ! -path "*/uploads/*" -exec md5sum {} + 2>/dev/null`;
+    const remoteCmd = `find ${REMOTE_BASE_DIR} -type f ! -path "*/node_modules/*" ! -path "${REMOTE_BASE_DIR}/uploads/*" -exec md5sum {} + 2>/dev/null`;
 
     conn.exec(remoteCmd, (err, stream) => {
         if (err) throw err;

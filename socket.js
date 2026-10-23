@@ -1,17 +1,20 @@
-import GroupRide from './models/GroupRide.js';
+import { registerUnsupportedChatEvents } from './modules/messages/socket.js';
+import GroupRide from "./modules/rides/GroupRide.model.js";
 import { resolveRideInviteMetadata } from './utils/rideInviteTarget.js';
 import { Server } from 'socket.io';
 import { getAllowedOrigins } from './config/env.js';
-import User from './models/User.js';
-import { verifyAccessToken } from './services/sessionTokenService.js';
-import Message from './models/Message.js';
-import { createMessageOnce } from './utils/chatMessageDelivery.js';
-import Conversation from './models/Conversation.js';
-import MeetupEvent from './models/MeetupEvent.js';
-import Pack from './models/Pack.js';
-import PackLoungeMessage from './models/PackLoungeMessage.js';
+import User from "./modules/users/model.js";
+import { verifyAccessToken } from "./modules/auth/service.js";
+import Message from "./modules/messages/model.js";
+import { createMessageOnce } from "./modules/messages/service.js";
+import Conversation from "./modules/messages/Conversation.model.js";
+import MeetupEvent from "./modules/events/model.js";
+import Pack from "./modules/packs/model.js";
+import PackLoungeMessage from "./modules/packs/PackLoungeMessage.model.js";
 import mongoose from 'mongoose';
-import { normalizeLegacyPackMembers } from './services/packGarageService.js';
+import { normalizeLegacyPackMembers } from "./modules/packs/service.js";
+import { notifyTextMentions } from "./modules/notifications/mention.service.js";
+import { approvedMemberIds } from "./utils/packMembership.js";
 import { initRadarSocket, startRadarBroadcastLoop } from './radarSocket.js';
 import { initWebRtcSignaling } from './webrtcSignaling.js';
 
@@ -154,6 +157,8 @@ export const initSync = (httpServer) => {
     const allowedOrigins = getAllowedOrigins();
     const allowAllOrigins = allowedOrigins.includes('*');
     io = new Server(httpServer, {
+        pingInterval: 3000,
+        pingTimeout: 4000,
         cors: {
             origin: allowAllOrigins ? '*' : allowedOrigins,
             methods: ["GET", "POST"],
@@ -242,6 +247,7 @@ export const initSync = (httpServer) => {
         });
 
         // Send a message (saves to DB, broadcasts to room, emits ACK)
+        registerUnsupportedChatEvents(socket);
         socket.on('send_message', async (data, callback) => {
             const { conversationId, recipientId, content, type, tempId, metadata } = data || {};
             try {
@@ -452,7 +458,7 @@ export const initSync = (httpServer) => {
                 // 9. If message is a ride invite, create inbox notification for recipients
                 if (msgType === 'RIDE_INVITE') {
                     try {
-                        const { createNotification } = await import('./controllers/notificationController.js');
+                        const { createNotification } = await import("./modules/notifications/controller.js");
                         const rideRef = newMessage.metadata?.rideId;
                         for (const pid of conversation.participants) {
                             const pidStr = pid.toString();
@@ -667,6 +673,20 @@ export const initSync = (httpServer) => {
                 const messagePayload = formatPackLoungeMessage(populated);
                 io.to(packLoungeRoom(packId)).emit('receive_pack_lounge_message', messagePayload);
 
+                if (msgType === 'TEXT' && content.includes('@')) {
+                    Pack.findById(packId)
+                        .select('memberRoles members owner admins joinRequests')
+                        .lean()
+                        .then((pack) => pack && notifyTextMentions({
+                            text: content,
+                            actorId: userId,
+                            type: 'MENTIONED_IN_PACK',
+                            allowedUserIds: approvedMemberIds(pack),
+                            refs: { pack: packId, relatedId: String(saved._id) },
+                        }))
+                        .catch((error) => console.warn('[PackLounge] mention notify failed:', error.message));
+                }
+
                 const response = { ok: true, message: messagePayload };
                 if (typeof ack === 'function') ack(response);
             } catch (error) {
@@ -863,4 +883,3 @@ export const disconnectUserSessions = (userId) => {
     vibeNamespace.to(vibeRoom).emit('session_expired');
     vibeNamespace.in(vibeRoom).disconnectSockets(true);
 };
-

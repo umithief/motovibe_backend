@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import Emoji from './models/Emoji.js';
+import Emoji from "./modules/emojis/model.js";
 
 dotenv.config();
 

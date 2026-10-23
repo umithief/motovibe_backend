@@ -1,9 +1,9 @@
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
-import GeoPoi from '../models/GeoPoi.js';
+import GeoPoi from "../modules/geo/model.js";
 import { getMongoUri } from '../config/env.js';
-import { fetchOverpassPois } from '../services/geo/providers/overpassProvider.js';
-import { createBboxTiles, resolvePoiImportBounds } from '../services/geo/poiImportPlanner.js';
+import { fetchOverpassPois } from "../modules/geo/providers/overpassProvider.js";
+import { createBboxTiles, resolvePoiImportBounds } from "../modules/geo/poiImportPlanner.js";
 
 dotenv.config();
 

@@ -1,0 +1,20 @@
+{
+  "syntaxFiles": 345,
+  "runtimeFiles": 244,
+  "importEdges": 694,
+  "userDeclarationsRetained": 94,
+  "publicUserExports": 80,
+  "controllerFilesMechanicallyExtracted": 42,
+  "operationBodiesVerifiedAtExtraction": 277,
+  "domainsWithoutService": [],
+  "expressServices": [],
+  "newFilesWhitespaceChecked": 248,
+  "trackedDiffCheck": "passed",
+  "runtime": "v20.20.2",
+  "tests": {
+    "pass": 163,
+    "fail": 0,
+    "skip": 0
+  },
+  "staticAuditRuntime": "v25.2.1"
+}

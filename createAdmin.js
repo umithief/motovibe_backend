@@ -7,7 +7,7 @@ dotenv.config();
 const MONGO_URI = process.env.MONGO_URI;
 if (!MONGO_URI) throw new Error('MONGO_URI ortam degiskeni zorunludur.');
 
-import User from './models/User.js';
+import User from "./modules/users/model.js";
 
 const createAdmin = async () => {
     try {

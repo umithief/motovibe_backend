@@ -1,9 +1,9 @@
 
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import Post from '../models/Post.js';
-import User from '../models/User.js';
-import VibeConfig from '../models/VibeConfig.js';
+import Post from "../modules/posts/model.js";
+import User from "../modules/users/model.js";
+import VibeConfig from "../modules/discovery/model.js";
 
 dotenv.config();
 

@@ -8,7 +8,7 @@ import {
     rejectUnsafeMongoKeys,
     setSecurityHeaders,
 } from '../middleware/securityMiddleware.js';
-import User from '../models/User.js';
+import User from "../modules/users/model.js";
 
 const createResponse = () => ({
     headers: {},

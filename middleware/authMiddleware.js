@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
 import catchAsync from '../utils/catchAsync.js';
 import AppError from '../utils/appError.js';
-import User from '../models/User.js';
+import User from "../modules/users/model.js";
 import { hasActiveApexAccess } from '../utils/apexAccess.js';
-import { verifyAccessToken } from '../services/sessionTokenService.js';
+import { verifyAccessToken } from "../modules/auth/service.js";
 
 const extractBearerToken = (authorization) => {
     if (typeof authorization !== 'string') return null;

@@ -1,0 +1,17 @@
+import { createController } from '../../utils/controller.js';
+import * as operations from './profile.service.js';
+export const getMe=createController(input=>operations.getMe(input));
+export const getProfile=createController(input=>operations.getProfile(input));
+export const getUsersByIds=createController(input=>operations.getUsersByIds(input));
+export const getUserBio=createController(input=>operations.getUserBio(input));
+export const updateProfile=createController(input=>operations.updateProfile(input));
+export const updateSettings=createController(input=>operations.updateSettings(input));
+export const searchUsers=createController(input=>operations.searchUsers(input));
+export const getAllUsers=createController(input=>operations.getAllUsers(input));
+export const requestVerification=createController(input=>operations.requestVerification(input));
+export const updateVerificationStatus=createController(input=>operations.updateVerificationStatus(input));
+export const onboardUser=createController(input=>operations.onboardUser(input));
+export const toggleGhostMode=createController(input=>operations.toggleGhostMode(input));
+export const updateThemePreference=createController(input=>operations.updateThemePreference(input));
+export const saveTelemetry=createController(input=>operations.saveTelemetry(input));
+export const checkUsernameAvailability=createController(input=>operations.checkUsernameAvailability(input));

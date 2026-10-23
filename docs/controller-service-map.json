@@ -1,0 +1,724 @@
+{
+  "modules/categories/controller.js": {
+    "service": "modules/categories/service.js",
+    "publicHandlers": [
+      "get",
+      "post",
+      "putId",
+      "deleteId"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 4,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/emojis/controller.js": {
+    "service": "modules/emojis/service.js",
+    "publicHandlers": [
+      "getMotoMojis"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 1,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/feedback/controller.js": {
+    "service": "modules/feedback/service.js",
+    "publicHandlers": [
+      "get",
+      "post"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 2,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/models3d/controller.js": {
+    "service": "modules/models3d/service.js",
+    "publicHandlers": [
+      "get",
+      "post",
+      "deleteId"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 3,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/appointments/controller.js": {
+    "service": "modules/appointments/service.js",
+    "publicHandlers": [
+      "getBusinessAppointments",
+      "bookAppointment",
+      "getAppointmentAvailability",
+      "updateAppointmentStatus"
+    ],
+    "helpers": [
+      "ACTIVE_APPOINTMENT_STATUSES",
+      "appointmentFitsWorkingHours",
+      "isAppointmentTransitionAllowed",
+      "resolveAppointmentService"
+    ],
+    "verifiedOperationBodies": 4,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/beacons/controller.js": {
+    "service": "modules/beacons/service.js",
+    "publicHandlers": [
+      "exploreMapRoutes",
+      "getActiveBeacons",
+      "createBeacon",
+      "updateBeaconStatus",
+      "deleteBeacon"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 5,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/campaigns/controller.js": {
+    "service": "modules/campaigns/service.js",
+    "publicHandlers": [
+      "getCampaigns",
+      "getNearbyPins",
+      "getMyChallenges",
+      "joinCampaign",
+      "claimReward",
+      "adminGetCampaigns",
+      "adminCreateCampaign",
+      "adminUpdateCampaign",
+      "adminDeleteCampaign"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 9,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/slides/controller.js": {
+    "service": "modules/slides/service.js",
+    "publicHandlers": [
+      "get",
+      "putReorder",
+      "post",
+      "putId",
+      "deleteId"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 5,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/posts/controller.js": {
+    "service": "modules/posts/service.js",
+    "publicHandlers": [
+      "getFeedPosts",
+      "createPost",
+      "toggleLike",
+      "savePost",
+      "addComment",
+      "getPostComments",
+      "updateComment",
+      "deleteComment",
+      "getUserPosts",
+      "getPostById",
+      "getPostStreamFeed",
+      "search",
+      "deletePost",
+      "updatePost",
+      "getSavedPosts",
+      "getTaggedPosts",
+      "getPostsByTag"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 17,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/reels/controller.js": {
+    "service": "modules/reels/service.js",
+    "publicHandlers": [
+      "createReel",
+      "getReelById",
+      "getReels",
+      "getUserReels",
+      "adminGetReels",
+      "updateReelStatus",
+      "updateReel",
+      "deleteReel",
+      "interactReel",
+      "getSavedReels",
+      "getReelComments",
+      "addReelComment",
+      "deleteReelComment"
+    ],
+    "helpers": [
+      "ALLOWED_VIDEO_HOSTNAMES",
+      "isValidVideoStorageUrl"
+    ],
+    "verifiedOperationBodies": 13,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/stories/controller.js": {
+    "service": "modules/stories/service.js",
+    "publicHandlers": [
+      "createStory",
+      "getStories",
+      "viewStory",
+      "likeStory",
+      "unlikeStory",
+      "reactToStory",
+      "getStoryViewers",
+      "replyToStory",
+      "deleteStory",
+      "createHighlight",
+      "getUserHighlights",
+      "deleteHighlight"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 12,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/messages/controller.js": {
+    "service": "modules/messages/application.service.js",
+    "publicHandlers": [
+      "getThreads",
+      "getUnreadCount",
+      "getConversation",
+      "sendMessage",
+      "toggleMuteConversation",
+      "markConversationAsRead",
+      "deleteConversation",
+      "deleteMessage",
+      "respondRideInvite",
+      "getMyPackLounges"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 10,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/admin/controller.js": {
+    "service": "modules/admin/service.js",
+    "publicHandlers": [
+      "getAllUsers",
+      "deleteUser",
+      "updateUserRole",
+      "getAllPosts",
+      "deletePost",
+      "getAllRoutes",
+      "deleteRoute",
+      "getAllPacks",
+      "deletePack",
+      "getAdminStats",
+      "getPendingGarageVerifications",
+      "verifyUserBike",
+      "getControlPanel",
+      "updateControlPanel",
+      "executeControlPanelAction"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 15,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/ads/controller.js": {
+    "service": "modules/ads/service.js",
+    "publicHandlers": [
+      "getAdPackages",
+      "getPublicAds",
+      "getAllAdsAdmin",
+      "createAd",
+      "updateAd",
+      "deleteAd",
+      "recordImpression",
+      "recordClick",
+      "getMyAds",
+      "createMyAd",
+      "payForAd",
+      "toggleMyAdStatus",
+      "deleteMyAd"
+    ],
+    "helpers": [
+      "AD_PACKAGES"
+    ],
+    "verifiedOperationBodies": 13,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/notifications/controller.js": {
+    "service": "modules/notifications/service.js",
+    "publicHandlers": [
+      "getNotifications",
+      "getUnreadCount",
+      "markAsRead",
+      "markAllAsRead",
+      "deleteNotification",
+      "clearReadNotifications",
+      "sendNotificationToUser"
+    ],
+    "helpers": [
+      "createNotification"
+    ],
+    "verifiedOperationBodies": 7,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/reports/controller.js": {
+    "service": "modules/reports/service.js",
+    "publicHandlers": [
+      "createReport",
+      "getAdminReports",
+      "resolveReport"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 3,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/tags/controller.js": {
+    "service": "modules/tags/service.js",
+    "publicHandlers": [
+      "getTrendingTags",
+      "searchTags",
+      "getTagDetails",
+      "followTag",
+      "unfollowTag"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 5,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/ui/controller.js": {
+    "service": "modules/ui/service.js",
+    "publicHandlers": [
+      "getBranding",
+      "updateBranding",
+      "getSettings",
+      "updateSettings"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 4,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/analytics/controller.js": {
+    "service": "modules/analytics/service.js",
+    "publicHandlers": [
+      "postVisit",
+      "getVisitors",
+      "postEvent",
+      "getDashboard"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 4,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/auth/controller.js": {
+    "service": "modules/auth/application.service.js",
+    "publicHandlers": [
+      "postForgotPassword",
+      "postVerifyCode",
+      "postResetPassword",
+      "postRefresh",
+      "postLogout",
+      "getMe"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 6,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/business/businessAnalytics.controller.js": {
+    "service": "modules/business/businessAnalytics.service.js",
+    "publicHandlers": [
+      "recordBusinessAnalyticsEvent",
+      "getBusinessAnalyticsDashboard"
+    ],
+    "helpers": [
+      "calculateBusinessFunnelMetrics"
+    ],
+    "verifiedOperationBodies": 2,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/business/businessReview.controller.js": {
+    "service": "modules/business/businessReview.service.js",
+    "publicHandlers": [
+      "getBusinessReviews",
+      "upsertBusinessReview",
+      "deleteBusinessReview"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 3,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/business/controller.js": {
+    "service": "modules/business/application.service.js",
+    "publicHandlers": [
+      "initializeBusinessCheckout",
+      "handleIyzicoCallback",
+      "handleIyzicoWebhook",
+      "getBusinessCommerceSummary",
+      "getBusinessSettlements"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 5,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/subscriptions/controller.js": {
+    "service": "modules/subscriptions/service.js",
+    "publicHandlers": [
+      "handleRevenueCatWebhook"
+    ],
+    "helpers": [
+      "parseRevenueCatSignature",
+      "verifyRevenueCatSignature",
+      "revenueCatUpdateForEvent"
+    ],
+    "verifiedOperationBodies": 1,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/discovery/controller.js": {
+    "service": "modules/discovery/application.service.js",
+    "publicHandlers": [
+      "universalSearch",
+      "getTrending"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 2,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/geo/controller.js": {
+    "service": "modules/geo/application.service.js",
+    "publicHandlers": [
+      "getNearbyPois",
+      "getNearbyRoadReports",
+      "createRoadReport",
+      "getRouteIntelligence",
+      "getProviderHealth"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 5,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/packs/controller.js": {
+    "service": "modules/packs/application.service.js",
+    "publicHandlers": [
+      "getAllPacks",
+      "createPack",
+      "getPackDetails",
+      "getLiveRiders",
+      "joinPack",
+      "leavePack",
+      "kickMember",
+      "approveJoinRequest",
+      "rejectJoinRequest",
+      "updateMemberRole",
+      "migratePackMemberRoles",
+      "updatePack",
+      "getPackSignals",
+      "createPackSignal",
+      "createPackRide",
+      "updatePackRide",
+      "deletePackRide",
+      "toggleRideAttendance",
+      "deletePack",
+      "getPackLeaderboard",
+      "getPackPosts"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 21,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/packs/packLounge.controller.js": {
+    "service": "modules/packs/packLounge.service.js",
+    "publicHandlers": [
+      "getPackLoungeMessages",
+      "postPackLoungeMessage",
+      "deletePackLoungeMessage",
+      "togglePackLoungeMute",
+      "getPackLoungeMuteStatus"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 5,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/packs/packPost.controller.js": {
+    "service": "modules/packs/packPost.service.js",
+    "publicHandlers": [
+      "createPackPost",
+      "getPackPosts",
+      "togglePackPostLike",
+      "addPackPostComment",
+      "deletePackPost",
+      "togglePinPackPost"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 6,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/rides/controller.js": {
+    "service": "modules/rides/application.service.js",
+    "publicHandlers": [
+      "createRide",
+      "getRide",
+      "getUserRides",
+      "createLegacyRide",
+      "deleteRide"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 5,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/rides/groupRide.controller.js": {
+    "service": "modules/rides/groupRide.service.js",
+    "publicHandlers": [
+      "getGroupRides",
+      "getGroupRideById",
+      "createGroupRide",
+      "joinGroupRide",
+      "leaveGroupRide",
+      "toggleGroupLiveRadar"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 6,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/rides/sos.controller.js": {
+    "service": "modules/rides/sos.service.js",
+    "publicHandlers": [
+      "triggerSOS",
+      "updateLiveLocation"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 2,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/routes/controller.js": {
+    "service": "modules/routes/application.service.js",
+    "publicHandlers": [
+      "getRoutes",
+      "getMyRoutes",
+      "getRouteById",
+      "createRoute",
+      "updateRouteDetails",
+      "deleteRoute",
+      "recordRouteRide",
+      "seedRoutes",
+      "generateApexRoute",
+      "saveRoute",
+      "addReview",
+      "editReview",
+      "deleteReview"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 13,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/uploads/controller.js": {
+    "service": "modules/uploads/service.js",
+    "publicHandlers": [
+      "post"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 1,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/users/achievements.controller.js": {
+    "service": "modules/users/achievements.service.js",
+    "publicHandlers": [
+      "seedAchievements",
+      "getAllAchievements"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 2,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/users/auth.controller.js": {
+    "service": "modules/users/auth.service.js",
+    "publicHandlers": [
+      "registerUser",
+      "loginUser",
+      "updatePassword",
+      "sendPhoneOtp",
+      "verifyPhone",
+      "deleteMyAccount"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 6,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/users/business.controller.js": {
+    "service": "modules/users/business.application.service.js",
+    "publicHandlers": [
+      "getProfessionalProfiles",
+      "updateProfileMode",
+      "upgradeToPro",
+      "updateBusinessProfile",
+      "getBusinessCatalog",
+      "updateBusinessCatalog",
+      "getBusinessTaxId",
+      "createBusinessCatalogItem",
+      "updateBusinessCatalogItem",
+      "deleteBusinessCatalogItem",
+      "getBusinessFlashOffers",
+      "getNearbyBusinessFlashOffers",
+      "createBusinessFlashOffer",
+      "cancelBusinessFlashOffer",
+      "downgradeFromPro"
+    ],
+    "helpers": [
+      "upgradeToBusiness",
+      "downgradeFromBusiness"
+    ],
+    "verifiedOperationBodies": 15,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/users/garage.controller.js": {
+    "service": "modules/users/garage.service.js",
+    "publicHandlers": [
+      "getGarage",
+      "addToGarage",
+      "removeFromGarage",
+      "setPrimaryBike",
+      "verifyGarageItem",
+      "updateGarageItem",
+      "addMaintenanceRecord",
+      "deleteMaintenanceRecord",
+      "calculateFuelEfficiency"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 9,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/users/profile.controller.js": {
+    "service": "modules/users/profile.service.js",
+    "publicHandlers": [
+      "getMe",
+      "getProfile",
+      "getUsersByIds",
+      "getUserBio",
+      "updateProfile",
+      "updateSettings",
+      "searchUsers",
+      "getAllUsers",
+      "requestVerification",
+      "updateVerificationStatus",
+      "onboardUser",
+      "toggleGhostMode",
+      "updateThemePreference",
+      "saveTelemetry",
+      "checkUsernameAvailability"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 15,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/users/push.controller.js": {
+    "service": "modules/users/push.service.js",
+    "publicHandlers": [
+      "registerPushToken",
+      "unregisterPushToken"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 2,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/users/social.controller.js": {
+    "service": "modules/users/social.service.js",
+    "publicHandlers": [
+      "toggleFollow",
+      "getFollowersList",
+      "getFollowingList",
+      "blockUser",
+      "unblockUser",
+      "getBlockedUsers"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 6,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/users/subscription.controller.js": {
+    "service": "modules/users/subscription.service.js",
+    "publicHandlers": [
+      "getProOffers",
+      "subscribeToPro",
+      "restoreProSubscription"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 3,
+    "verificationMethod": "AST body equivalence at extraction"
+  },
+  "modules/events/controller.js": {
+    "service": "modules/events/service.js",
+    "publicHandlers": [
+      "listEvents",
+      "getEventStats",
+      "getFeaturedEvents",
+      "getMyEvents",
+      "getEvent",
+      "createEvent",
+      "updateEvent",
+      "deleteEvent",
+      "cancelEvent",
+      "joinEvent",
+      "leaveEvent",
+      "startEvent",
+      "finishEvent",
+      "updateEventLocation",
+      "getEventLive",
+      "sendEventMessage"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 0,
+    "verificationMethod": "HTTP/service regression tests; existing or manually separated thin adapter"
+  },
+  "modules/home/controller.js": {
+    "service": "modules/home/service.js",
+    "publicHandlers": [
+      "getHomeSummary"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 0,
+    "verificationMethod": "HTTP/service regression tests; existing or manually separated thin adapter",
+    "servicesByExport": {
+      "getHomeSummary": "buildHomeSummary"
+    }
+  },
+  "modules/leaderboards/controller.js": {
+    "service": "modules/leaderboards/service.js",
+    "publicHandlers": [
+      "getLeaderboard",
+      "resetLeaderboard"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 0,
+    "verificationMethod": "HTTP/service regression tests; existing or manually separated thin adapter"
+  },
+  "modules/rides/activities.controller.js": {
+    "service": "modules/rides/service.js",
+    "publicHandlers": [
+      "getLatestActivity",
+      "createActivity"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 0,
+    "verificationMethod": "HTTP/service regression tests; existing or manually separated thin adapter",
+    "servicesByExport": {
+      "getLatestActivity": "findLatestActivity",
+      "createActivity": "createLegacyActivity"
+    }
+  },
+  "modules/discovery/feed.controller.js": {
+    "service": "modules/discovery/feed.service.js",
+    "publicHandlers": [
+      "getDiscoveryFeed",
+      "getExplorePosts",
+      "getExploreFeed",
+      "getVibeSettings",
+      "updateVibeSettings"
+    ],
+    "helpers": [],
+    "verifiedOperationBodies": 0,
+    "verificationMethod": "HTTP/service regression tests; existing or manually separated thin adapter",
+    "settingsService": "modules/discovery/settings.service.js"
+  },
+  "modules/users/profileTheme.controller.js": {
+    "service": "modules/users/profileTheme.service.js",
+    "publicHandlers": [
+      "getProfileThemeCatalog",
+      "getProfileThemeDetail",
+      "updateProfileTheme",
+      "resetProfileTheme"
+    ],
+    "helpers": [
+      "createProfileThemeHandlers"
+    ],
+    "verifiedOperationBodies": 0,
+    "verificationMethod": "HTTP/service regression tests; existing or manually separated thin adapter"
+  }
+}

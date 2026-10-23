@@ -24,7 +24,7 @@ export const getMapboxDirectionsAccessToken = () => (
     ''
 ).trim();
 
-export const getBodyLimit = () => process.env.BODY_LIMIT?.trim() || '1mb';
+export const getBodyLimit = () => process.env.BODY_LIMIT?.trim() || '15mb';
 
 export const getAllowedOrigins = () => {
     const configured = process.env.CORS_ORIGINS?.split(',')

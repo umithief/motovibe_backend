@@ -1,13 +1,13 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 
-import { calculateSettlementAmounts } from '../services/businessSettlementService.js';
+import { calculateSettlementAmounts } from "../modules/business/service.js";
 import {
     buildCheckoutRequest,
     isBusinessCheckoutEnabled,
     verifyCheckoutResultSignature,
     verifyIyzicoWebhookSignature
-} from '../services/iyzicoCheckoutService.js';
+} from "../modules/business/iyzicoCheckoutService.service.js";
 import crypto from 'node:crypto';
 
 test('business settlement calculates server-side commission and net amount', () => {

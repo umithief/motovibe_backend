@@ -19,3 +19,9 @@ fix_*.cjs
 check_*.js
 deploy*.js
 fast_deploy.js
+
+attic
+controllers
+routes
+services
+diag.js

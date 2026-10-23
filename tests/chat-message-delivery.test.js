@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { createMessageOnce } from '../utils/chatMessageDelivery.js';
-import Message from '../models/Message.js';
+import { createMessageOnce } from "../modules/messages/service.js";
+import Message from "../modules/messages/model.js";
 
 const values = { sender: 'sender', conversationId: 'conversation', tempId: 'retry-1', type: 'TEXT', content: 'Merhaba' };
 

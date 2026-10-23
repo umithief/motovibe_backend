@@ -1,0 +1,16 @@
+import { createController } from '../../utils/controller.js';
+import * as operations from './service.js';
+export const createReel=createController(input=>operations.createReel(input));
+export const getReelById=createController(input=>operations.getReelById(input));
+export const getReels=createController(input=>operations.getReels(input));
+export const getUserReels=createController(input=>operations.getUserReels(input));
+export const adminGetReels=createController(input=>operations.adminGetReels(input));
+export const updateReelStatus=createController(input=>operations.updateReelStatus(input));
+export const updateReel=createController(input=>operations.updateReel(input));
+export const deleteReel=createController(input=>operations.deleteReel(input));
+export const interactReel=createController(input=>operations.interactReel(input));
+export const getSavedReels=createController(input=>operations.getSavedReels(input));
+export const getReelComments=createController(input=>operations.getReelComments(input));
+export const addReelComment=createController(input=>operations.addReelComment(input));
+export const deleteReelComment=createController(input=>operations.deleteReelComment(input));
+export { ALLOWED_VIDEO_HOSTNAMES, isValidVideoStorageUrl } from "./service.js";

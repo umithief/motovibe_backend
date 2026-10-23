@@ -1,6 +1,10 @@
+import { sendResponse } from '../utils/respond.js';
 import AppError from '../utils/appError.js';
 
-const errorPayload = (message, requestId, field) => ({
+const errorPayload = (message, requestId, field, code) => ({
+    data: null,
+    error: { message, ...(code ? { code } : {}), ...(field ? { field } : {}) },
+    ...(code ? { code } : {}),
     status: 'error',
     message,
     ...(field ? { field } : {}),
@@ -49,5 +53,6 @@ export const globalErrorHandler = (err, req, res, next) => {
         console.error(`[${req.id || 'request-id-yok'}] Operasyonel sunucu hatasi`, err.message);
     }
 
-    return res.status(statusCode).json(errorPayload(message || 'Istek islenemedi.', req.id, field));
+    const body=err.legacyExactPayload ?? { ...err.responseFields, ...errorPayload(message || 'Istek islenemedi.', req.id, field, err.code) };
+    return sendResponse(req,res,body,{statusCode,legacyText:err.legacyText});
 };

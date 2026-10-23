@@ -3,7 +3,7 @@ import test from 'node:test';
 import {
     generateApexRoutePreview,
     normalizeApexRouteRequest
-} from '../services/apexRoutePlanner.js';
+} from "../modules/routes/service.js";
 
 const roadNetworkResponse = {
     code: 'Ok',
@@ -152,7 +152,7 @@ test('Apex entitlement expires even when the legacy premium flag remains true', 
 });
 
 test('Apex environment bearing resolves mountain highest peak and coastal water tangent', async () => {
-    const { resolveEnvironmentBearing } = await import('../services/apexRoutePlanner.js');
+    const { resolveEnvironmentBearing } = await import("../modules/routes/service.js");
 
     // Mock elevation returning peak at bearing 0 (120m) and water at bearing 90 (0m)
     const mockFetch = async () => new Response(JSON.stringify({
@@ -178,3 +178,48 @@ test('Apex environment bearing resolves mountain highest peak and coastal water 
     assert.equal(coastalBearing, 180); // water at bearing 90 -> tangent is 90 + 90 = 180
 });
 
+test('Apex variant turns the loop: around the compass, or beside the terrain heading', async () => {
+    const { variantBearing } = await import('../modules/routes/service.js');
+    assert.equal(variantBearing(90, 0, false), 90);
+    assert.equal(variantBearing(90, 0, true), 90);
+    // Terrain-led loops stay within 105 degrees of the terrain heading.
+    const swings = [1, 2, 3, 4, 5, 6, 7].map((v) => variantBearing(90, v, true));
+    assert.deepEqual(swings, [125, 55, 160, 20, 195, 345, 125]);
+    // Generic loops spread out; consecutive suggestions never repeat a heading.
+    const generic = [0, 1, 2, 3].map((v) => Math.round(variantBearing(10, v, false)));
+    assert.equal(new Set(generic).size, 4);
+
+    const request = normalizeApexRouteRequest({
+        lat: 41, lng: 29, preferences: { distance: 10, variant: '3' }
+    });
+    assert.equal(request.variant, 3);
+    assert.equal(normalizeApexRouteRequest({
+        lat: 41, lng: 29, preferences: { distance: 10, variant: 999 }
+    }).variant, 50);
+    assert.equal(normalizeApexRouteRequest({
+        lat: 41, lng: 29, preferences: { distance: 10 }
+    }).variant, 0);
+});
+
+test('Apex variant reaches the road planner as different anchors', async () => {
+    const anchorsFor = async (variant) => {
+        let url = '';
+        await generateApexRoutePreview(
+            { lat: 41.0082, lng: 28.9784, preferences: { distance: 10, environment: 'Şehir İçi', variant } },
+            {
+                accessToken: 'test-token',
+                fetchImpl: async (endpoint) => {
+                    url = String(endpoint);
+                    return new Response(JSON.stringify(roadNetworkResponse), {
+                        status: 200,
+                        headers: { 'content-type': 'application/json' }
+                    });
+                }
+            }
+        );
+        return url.split('/driving/')[1].split('?')[0];
+    };
+    const first = await anchorsFor(0);
+    assert.equal(await anchorsFor(0), first);
+    assert.notEqual(await anchorsFor(1), first);
+});

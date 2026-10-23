@@ -1,0 +1,17 @@
+import { createController } from '../../utils/controller.js';
+import * as operations from './service.js';
+export const getAllUsers=createController(input=>operations.getAllUsers(input));
+export const deleteUser=createController(input=>operations.deleteUser(input));
+export const updateUserRole=createController(input=>operations.updateUserRole(input));
+export const getAllPosts=createController(input=>operations.getAllPosts(input));
+export const deletePost=createController(input=>operations.deletePost(input));
+export const getAllRoutes=createController(input=>operations.getAllRoutes(input));
+export const deleteRoute=createController(input=>operations.deleteRoute(input));
+export const getAllPacks=createController(input=>operations.getAllPacks(input));
+export const deletePack=createController(input=>operations.deletePack(input));
+export const getAdminStats=createController(input=>operations.getAdminStats(input));
+export const getPendingGarageVerifications=createController(input=>operations.getPendingGarageVerifications(input));
+export const verifyUserBike=createController(input=>operations.verifyUserBike(input));
+export const getControlPanel=createController(input=>operations.getControlPanel(input));
+export const updateControlPanel=createController(input=>operations.updateControlPanel(input));
+export const executeControlPanelAction=createController(input=>operations.executeControlPanelAction(input));

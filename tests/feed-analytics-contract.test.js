@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import Analytics from '../models/Analytics.js';
-import { summarizeFeedAnalytics } from '../routes/analyticsRoutes.js';
+import Analytics from "../modules/analytics/model.js";
+import { summarizeFeedAnalytics } from "../modules/analytics/routes.js";
 
 test('feed analytics schema stores product metrics without personal copy', () => {
     const event = new Analytics({

@@ -1,18 +1,18 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { analyzeCurvature, routeDistanceMeters, sampleRoute } from '../services/geo/utils/geoMath.js';
-import { calculateRideScore, calculateScenicScore } from '../services/geo/routeIntelligenceService.js';
-import { normalizeRoutePreferences } from '../services/geo/routeModePolicy.js';
-import { summarizeElevation } from '../services/geo/providers/openMeteoElevationProvider.js';
-import { summarizeRouteWeather } from '../services/geo/providers/openMeteoProvider.js';
-import { parseFirmsCsv, summarizeWildfireDetections } from '../services/geo/providers/nasaFirmsProvider.js';
-import { normalizeWikidataDiscovery } from '../services/geo/providers/wikidataDiscoveryProvider.js';
-import { summarizeTrafficSegments } from '../services/geo/providers/tomTomTrafficProvider.js';
-import { normalizeOverturePois } from '../services/geo/providers/overtureProvider.js';
-import { createBboxTiles, resolvePoiImportBounds } from '../services/geo/poiImportPlanner.js';
-import { assertProviderAvailable, getGeoProviderMetrics, recordProviderResult, resetGeoProviderMetricsForTest } from '../services/geo/geoProviderMonitor.js';
-import { normalizeTomTomIncidents } from '../services/geo/providers/tomTomIncidentsProvider.js';
-import { resolveRoadReportExpiry } from '../services/geo/roadReportPolicy.js';
+import { analyzeCurvature, routeDistanceMeters, sampleRoute } from "../modules/geo/utils/geoMath.js";
+import { calculateRideScore, calculateScenicScore } from "../modules/geo/service.js";
+import { normalizeRoutePreferences } from "../modules/geo/routeModePolicy.js";
+import { summarizeElevation } from "../modules/geo/providers/openMeteoElevationProvider.js";
+import { summarizeRouteWeather } from "../modules/geo/providers/openMeteoProvider.js";
+import { parseFirmsCsv, summarizeWildfireDetections } from "../modules/geo/providers/nasaFirmsProvider.js";
+import { normalizeWikidataDiscovery } from "../modules/geo/providers/wikidataDiscoveryProvider.js";
+import { summarizeTrafficSegments } from "../modules/geo/providers/tomTomTrafficProvider.js";
+import { normalizeOverturePois } from "../modules/geo/providers/overtureProvider.js";
+import { createBboxTiles, resolvePoiImportBounds } from "../modules/geo/poiImportPlanner.js";
+import { assertProviderAvailable, getGeoProviderMetrics, recordProviderResult, resetGeoProviderMetricsForTest } from "../modules/geo/geoProviderMonitor.js";
+import { normalizeTomTomIncidents } from "../modules/geo/providers/tomTomIncidentsProvider.js";
+import { resolveRoadReportExpiry } from "../modules/geo/roadReportPolicy.js";
 
 const route = [
     { lat: 41.0082, lng: 28.9784 },

@@ -1,0 +1,16 @@
+import { createController } from '../../utils/controller.js';
+import * as operations from './service.js';
+export const getAdPackages=createController(input=>operations.getAdPackages(input));
+export const getPublicAds=createController(input=>operations.getPublicAds(input));
+export const getAllAdsAdmin=createController(input=>operations.getAllAdsAdmin(input));
+export const createAd=createController(input=>operations.createAd(input));
+export const updateAd=createController(input=>operations.updateAd(input));
+export const deleteAd=createController(input=>operations.deleteAd(input));
+export const recordImpression=createController(input=>operations.recordImpression(input));
+export const recordClick=createController(input=>operations.recordClick(input));
+export const getMyAds=createController(input=>operations.getMyAds(input));
+export const createMyAd=createController(input=>operations.createMyAd(input));
+export const payForAd=createController(input=>operations.payForAd(input));
+export const toggleMyAdStatus=createController(input=>operations.toggleMyAdStatus(input));
+export const deleteMyAd=createController(input=>operations.deleteMyAd(input));
+export { AD_PACKAGES } from "./service.js";

@@ -1,0 +1,18 @@
+import { createController } from '../../utils/controller.js';
+import * as operations from './business.application.service.js';
+export const getProfessionalProfiles=createController(input=>operations.getProfessionalProfiles(input));
+export const updateProfileMode=createController(input=>operations.updateProfileMode(input));
+export const upgradeToPro=createController(input=>operations.upgradeToPro(input));
+export const updateBusinessProfile=createController(input=>operations.updateBusinessProfile(input));
+export const getBusinessCatalog=createController(input=>operations.getBusinessCatalog(input));
+export const updateBusinessCatalog=createController(input=>operations.updateBusinessCatalog(input));
+export const getBusinessTaxId=createController(input=>operations.getBusinessTaxId(input));
+export const createBusinessCatalogItem=createController(input=>operations.createBusinessCatalogItem(input));
+export const updateBusinessCatalogItem=createController(input=>operations.updateBusinessCatalogItem(input));
+export const deleteBusinessCatalogItem=createController(input=>operations.deleteBusinessCatalogItem(input));
+export const getBusinessFlashOffers=createController(input=>operations.getBusinessFlashOffers(input));
+export const getNearbyBusinessFlashOffers=createController(input=>operations.getNearbyBusinessFlashOffers(input));
+export const createBusinessFlashOffer=createController(input=>operations.createBusinessFlashOffer(input));
+export const cancelBusinessFlashOffer=createController(input=>operations.cancelBusinessFlashOffer(input));
+export const downgradeFromPro=createController(input=>operations.downgradeFromPro(input));
+export { upgradeToBusiness, downgradeFromBusiness } from "./business.application.service.js";

@@ -1,6 +1,6 @@
 ﻿import dotenv from 'dotenv';
 dotenv.config();
-import { sendPasswordResetEmail } from '../services/emailService.js';
+import { sendPasswordResetEmail } from "../modules/notifications/email.service.js";
 
 const targetEmail = process.argv[2] || process.env.SMTP_USER;
 console.log(`[Test] Test e-postası gönderiliyor -> ${targetEmail}`);

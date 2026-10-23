@@ -7,14 +7,14 @@ import {
     appointmentFitsWorkingHours,
     isAppointmentTransitionAllowed,
     resolveAppointmentService
-} from '../controllers/appointmentController.js';
+} from "../modules/appointments/controller.js";
 import {
     businessProfileForPublic,
     buildBusinessFlashOfferInput,
     isValidBusinessCoordinates,
     normalizeProfessionalStatusForResponse,
     sanitizeBusinessFlashOffers
-} from '../controllers/userController.js';
+} from "../modules/users/controller.js";
 
 const mondayHours = [
     { day: 'Pazartesi', open: '09:00', close: '18:00', isClosed: false }

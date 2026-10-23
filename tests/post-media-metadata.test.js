@@ -2,8 +2,8 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import mongoose from 'mongoose';
 
-import Post from '../models/Post.js';
-import Reel from '../models/Reel.js';
+import Post from "../modules/posts/model.js";
+import Reel from "../modules/reels/model.js";
 
 test('post media keeps bounded image dimensions and aspect ratio', () => {
     const post = new Post({
@@ -57,7 +57,7 @@ test('reel keeps thumbnail dimensions for feed layout stability', () => {
 });
 
 test('isValidVideoStorageUrl accepts local uploads, motovibe CDN and rejects arbitrary untrusted URLs', async () => {
-    const { isValidVideoStorageUrl } = await import('../controllers/reelController.js');
+    const { isValidVideoStorageUrl } = await import("../modules/reels/controller.js");
 
     // Valid uploads and local paths
     assert.equal(isValidVideoStorageUrl('uploads/reel-12345.mp4'), true);
@@ -74,4 +74,3 @@ test('isValidVideoStorageUrl accepts local uploads, motovibe CDN and rejects arb
     assert.equal(isValidVideoStorageUrl(''), false);
     assert.equal(isValidVideoStorageUrl(null), false);
 });
-

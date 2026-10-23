@@ -6,7 +6,7 @@ import {
     resolveViewerAccess,
     stripPublicUserFields,
     userLookupQuery
-} from '../controllers/userController.js';
+} from "../modules/users/controller.js";
 
 function makeUser(overrides = {}) {
     return {
@@ -89,8 +89,8 @@ test('public strip removes PII, admin, garage verification image and location wh
 });
 
 test('Post and Reel models declare isDeleted and visibility fields', async () => {
-    const { default: Post } = await import('../models/Post.js');
-    const { default: Reel } = await import('../models/Reel.js');
+    const { default: Post } = await import("../modules/posts/model.js");
+    const { default: Reel } = await import("../modules/reels/model.js");
 
     assert.ok(Post.schema.path('isDeleted'), 'Post schema should have isDeleted path');
     assert.ok(Post.schema.path('visibility'), 'Post schema should have visibility path');
