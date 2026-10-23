@@ -210,6 +210,8 @@ export const createApp = () => {
     app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, {
         explorer: true,
         customSiteTitle: 'MotoVibe / Motonom API Docs',
+        // Üstteki info panelini (başlık + versiyon + OAS rozeti + açıklama) gizle.
+        customCss: '.swagger-ui .information-container { display: none !important; }',
     }));
 
     app.use('/api/upload', uploadRoutes);
